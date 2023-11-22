@@ -14,6 +14,19 @@ ScranAdvisor.prototype.findByFullName = function(fullName){
     return byFullName[0];
 }
 
+ScranAdvisor.prototype.getAllNames = function(){
+    const restaurantNames = this.restaurants.map((restaurant) => {
+        return restaurant.name;
+    })
+    return restaurantNames;
+}
+
+ScranAdvisor.prototype.findByLocation = function(locationName){
+    const restaurantsByLocation = this.restaurants.filter((restaurant) => {
+        return restaurant.location.town === locationName;
+    })
+    return restaurantsByLocation;
+}
 
 
 
